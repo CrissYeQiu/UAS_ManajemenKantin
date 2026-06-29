@@ -16,17 +16,42 @@ body{
 /* Sidebar */
 
 .sidebar{
-
     width:260px;
     height:100vh;
-
     position:fixed;
-
+    left: 0;
+    top: 0;
     background:linear-gradient(180deg,#5B7CFA,#7A5AF8);
-
     color:white;
-
     padding:30px 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 0;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none !important;
+    color: white !important;
+
+    padding: 14px;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: white !important;
+    color: #5B7CFA !important;
 }
 
 .logo{

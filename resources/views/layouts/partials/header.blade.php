@@ -6,7 +6,7 @@
             <i class="fa-solid fa-bars"></i>
         </button>
 
-        <h2>Dashboard Waroeng Lumintue's</h2>
+        <h2>Waroeng Lumintue's</h2>
 
     </div>
 

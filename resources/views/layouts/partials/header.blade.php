@@ -41,7 +41,7 @@
 
                 <hr>
 
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit">
                         <i class="fa-solid fa-right-from-bracket"></i>

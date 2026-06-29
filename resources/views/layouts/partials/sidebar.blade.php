@@ -8,7 +8,7 @@
     <ul>
 
         <li>
-            <a href="/">
+            <a href="/beranda">
                 <i class="fa-solid fa-house"></i>
                 <span>Beranda</span>
             </a>

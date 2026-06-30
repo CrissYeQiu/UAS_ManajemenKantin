@@ -1,6 +1,6 @@
 <footer>
 
-    © {{ date('Y') }} Lumintue's |
+    © {{ date('Y') }} Luminthue's |
     Sistem Manajemen Kantin
 
 </footer>

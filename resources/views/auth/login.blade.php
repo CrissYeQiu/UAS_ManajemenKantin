@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body class="bg-light">
+    <a href="/"
+        class="btn btn-outline-secondary btn-sm position-absolute m-3"
+        style="top: 0; left: 0;">
+            Kembali ke Landing Page
+    </a>
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-4">
@@ -33,7 +38,7 @@
                             <input type="password" name="password" class="form-control" required>
                         </div>
                         <button type="submit" class="btn btn-primary w-100 mb-2">Masuk Ke Sistem</button>
-                        <p class="text-center small mb-0">Belum memiliki akun warga? <a href="{{ route('register') }}">Daftar Sekarang</a></p>
+                        <p class="text-center small mb-0">Belum memiliki akun? <a href="{{ route('register') }}">Daftar Sekarang</a></p>
                     </form>
                 </div>
             </div>

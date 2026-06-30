@@ -27,11 +27,9 @@ class AuthController extends Controller
  
         // Melakukan percobaan pencocokan data ke dalam database
         if (Auth::attempt($credentials)) {
-            // Regenerasi Session ID untuk menangani celah keamanan Session Fixation Attacks
             $request->session()->regenerate();
- 
             // Mengalihkan pengguna ke halaman tujuan semula sebelum dicegat, atau ke halaman utama
-            return redirect()->intended('/dashboard')->with('sukses', 'Selamat Datang Kembali di Aplikasi Simpel-K!');
+            return redirect()->intended('/menu')->with("sukses", "Selamat Datang Kembali di Waroeng Luminthue's");
         }
  
         // Jika pencocokan gagal, kembalikan ke form login dengan pesan kesalahan eksplisit
@@ -61,7 +59,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'warga' // Setiap pendaftar mandiri otomatis diset sebagai warga biasa
+            'role' => 'user' // Setiap pendaftar mandiri otomatis diset sebagai warga biasa
         ]);
  
         return redirect()->route('login')->with('sukses', 'Proses pendaftaran berhasil! Silakan masuk.');

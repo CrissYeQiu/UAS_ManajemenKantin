@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\StokController;
 
 Route::get('/', function () {
     return view('landingpage');
@@ -27,10 +29,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
+// Menu
+Route::resource('menu', MenuController::class);
+
+// Stok
+Route::resource('stok', StokController::class);
+
 // Route Karyawan
-Route::get('/karyawan', [KaryawanController::class, 'index'])->name('karyawan.index');
-Route::get('/karyawan/create', [KaryawanController::class, 'create'])->name('karyawan.create');
-Route::post('/karyawan', [KaryawanController::class, 'store'])->name('karyawan.store');
-Route::get('/karyawan/{id}/edit', [KaryawanController::class, 'edit'])->name('karyawan.edit');
-Route::put('/karyawan/{id}', [KaryawanController::class, 'update'])->name('karyawan.update');
-Route::delete('/karyawan/{id}', [KaryawanController::class, 'destroy'])->name('karyawan.destroy');
+Route::resource('/karyawan', KaryawanController::class);

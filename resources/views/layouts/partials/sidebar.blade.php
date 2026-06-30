@@ -24,7 +24,7 @@
         <li>
             <a href="/karyawan">
                 <i class="fa-solid fa-users"></i>
-                <span>Akun Karyawan</span>
+                <span>Data Karyawan</span>
             </a>
         </li>
     </ul>

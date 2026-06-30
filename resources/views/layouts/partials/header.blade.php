@@ -38,9 +38,6 @@
                     <i class="fa-solid fa-gear"></i>
                     Pengaturan
                 </a>
-
-                <hr>
-
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit">

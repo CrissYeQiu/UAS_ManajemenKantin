@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\Hash;
  
 class AuthController extends Controller
 {
-    // 1. Menampilkan Antarmuka Form Login
+    // tampilan ke index login
     public function showLogin() {
         return view('auth.login');
     }
  
-    // 2. Memproses Validasi dan Pencocokan Kredensial Login
+    // Validasi
     public function processLogin(Request $request) {
         $credentials = $request->validate([
             'email' => 'required|email',
@@ -38,12 +38,12 @@ class AuthController extends Controller
         ])->onlyInput('email');
     }
  
-    // 3. Menampilkan Antarmuka Form Registrasi Warga
+    // Menampilkan index daftar
     public function showRegister() {
         return view('auth.register');
     }
  
-    // 4. Memproses Pendaftaran dan Enkripsi Akun Warga Baru
+    // Proses pendaftaran
     public function storeRegister(Request $request) {
         $request->validate([
             'name' => 'required|max:255',
@@ -65,7 +65,7 @@ class AuthController extends Controller
         return redirect()->route('login')->with('sukses', 'Proses pendaftaran berhasil! Silakan masuk.');
     }
  
-    // 5. Memproses Logout dan Pemusnahan Sesi Aktif Server
+    // proses logout
     public function logout(Request $request) {
         Auth::logout();
  

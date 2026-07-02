@@ -17,7 +17,7 @@ return new class extends Migration
         $table->enum('jenis', ['makanan', 'minuman']);
         $table->integer('harga');
         $table->text('deskripsi')->nullable();
-        $table->boolean('status')->default(true); // tersedia / tidak
+        $table->boolean('status')->default(true);
         $table->timestamps();
     });
     

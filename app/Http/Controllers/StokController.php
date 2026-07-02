@@ -8,18 +8,21 @@ use App\Models\User;
 
 class StokController extends Controller
 {
+    // menampilkan index stok
     public function index()
     {
-        $pengajuan = Stok::with('user')->latest()->get();
+        $pengajuan = Stok::with('user')->oldest()->get();
         return view('stok.index', compact('pengajuan'));
     }
 
+    // menampilkan form tambah stok
     public function create()
     {
         $users = User::all();
         return view('stok.create', compact('users'));
     }
 
+    // menyimpan stok baru
     public function store(Request $request)
     {
         $request->validate([
@@ -46,6 +49,7 @@ class StokController extends Controller
                          ->with('success', 'Pengajuan berhasil ditambahkan');
     }
 
+    // enampilkan form edit
     public function edit($id)
     {
         $pengajuan = Stok::findOrFail($id);
@@ -54,6 +58,7 @@ class StokController extends Controller
         return view('stok.edit', compact('pengajuan', 'users'));
     }
 
+    // mengupdate data
     public function update(Request $request, $id)
     {
         $request->validate([

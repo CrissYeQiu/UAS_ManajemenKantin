@@ -10,7 +10,7 @@ class KaryawanController extends Controller
 {
     public function index()
     {
-        $karyawan = User::latest()->get();
+        $karyawan = User::oldest()->get();
         return view('karyawan.index', compact('karyawan'));
     }
 

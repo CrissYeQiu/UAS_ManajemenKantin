@@ -31,9 +31,7 @@
         @forelse($pengajuan as $key => $p)
         <tr>
             <td>{{ $key + 1 }}</td>
-
             <td>{{ $p->user->name ?? '-' }}</td>
-
             <td>{{ $p->nama_bahan }}</td>
             <td>{{ $p->jumlah }}</td>
             <td>{{ $p->satuan }}</td>

@@ -10,7 +10,7 @@ class MenuController extends Controller
     // Menampilkan semua menu
     public function index()
     {
-        $menu = Menu::latest()->get();
+        $menu = Menu::oldest()->get();
 
         return view('menu.index', compact('menu'));
     }

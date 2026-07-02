@@ -1,51 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Simpel-K - Registrasi Akun Warga</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi | Waroeng Luminthue's</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/daftar.css') }}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 </head>
-<body class="bg-light">
-        <a href="/"
-            class="btn btn-outline-secondary btn-sm position-absolute m-3"
-            style="top: 0; left: 0;">
-                Kembali ke Landing Page
-        </a>
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card shadow">
-                <div class="card-header bg-success text-white text-center">
-                    <h5 class="mb-0 py-1">Pendaftaran Akun Mandiri Warga</h5>
+<body>
+
+<a href="/" class="back-home">
+    <i class="bi bi-arrow-left"></i>
+    <span>Kembali ke Landing Page</span>
+</a>
+
+<div class="container-fluid">
+
+    <div class="row register-container">
+
+        <!-- KIRI -->
+        <div class="col-lg-6 left-side">
+
+            <div class="left-content">
+
+                <div class="brand">
+                    🍽️ Waroeng Luminthue's
                 </div>
-                <div class="card-body p-4">
-                    <form action="{{ route('register.store') }}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                            <label class="form-label small">Nama Lengkap Sesuai KTP</label>
-                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label small">Alamat Email Aktif</label>
-                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required>
-                            @error('email') <div class="invalid-feedback small">{{ $message }}</div> @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label small">Kata Sandi Baru (Minimal 6 Karakter)</label>
-                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" required>
-                            @error('password') <div class="invalid-feedback small">{{ $message }}</div> @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label small">Ulangi Kata Sandi Baru</label>
-                            <input type="password" name="password_confirmation" class="form-control" required>
-                        </div>
-                        <button type="submit" class="btn btn-success w-100 mb-2">Daftar Akun</button>
-                        <p class="text-center small mb-0">Sudah terdaftar sebelumnya? <a href="{{ route('login') }}">Masuk disini</a></p>
-                    </form>
-                </div>
+
+                <h1>
+                    Bergabung<br>
+                    Bersama Kami
+                </h1>
+
+                <p>
+                    Daftarkan akun Anda untuk mulai mengelola
+                    data kantin, menu, stok, transaksi,
+                    dan seluruh aktivitas Waroeng Luminthue's.
+                </p>
+
             </div>
+
         </div>
+
+        <!-- KANAN -->
+        <div class="col-lg-6 right-side">
+
+            <div class="register-box">
+
+                <div class="register-icon">
+                    <i class="bi bi-person-plus-fill"></i>
+                </div>
+
+                <h2 class="text-center fw-bold">
+                    Registrasi Akun
+                </h2>
+
+                <p class="text-center text-muted mb-4">
+                    Lengkapi data berikut untuk membuat akun baru.
+                </p>
+
+                <form action="{{ route('register.store') }}" method="POST">
+
+                    @csrf
+
+                    <div class="mb-3">
+                        <label>Nama Lengkap</label>
+
+                        <input type="text"
+                               name="name"
+                               value="{{ old('name') }}"
+                               class="form-control @error('name') is-invalid @enderror"
+                               placeholder="Masukkan nama lengkap"
+                               required>
+
+                        @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>Email</label>
+
+                        <input type="email"
+                               name="email"
+                               value="{{ old('email') }}"
+                               class="form-control @error('email') is-invalid @enderror"
+                               placeholder="Masukkan email"
+                               required>
+
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>Password</label>
+
+                        <input type="password"
+                               name="password"
+                               class="form-control @error('password') is-invalid @enderror"
+                               placeholder="Minimal 6 karakter"
+                               required>
+
+                        @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label>Konfirmasi Password</label>
+
+                        <input type="password"
+                               name="password_confirmation"
+                               class="form-control"
+                               placeholder="Ulangi password"
+                               required>
+
+                    </div>
+
+                    <button class="btn btn-success btn-register w-100">
+                        Daftar Sekarang
+                    </button>
+
+                </form>
+
+                <hr>
+
+                <p class="text-center mb-0">
+
+                    Sudah memiliki akun?
+
+                    <a href="{{ route('login') }}" class="fw-bold text-decoration-none">
+                        Masuk di sini
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
+
 </div>
+
 </body>
 </html>

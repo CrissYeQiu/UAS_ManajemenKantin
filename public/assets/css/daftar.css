@@ -1,0 +1,161 @@
+body {
+    background: #f4f7fc;
+    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.register-container {
+    min-height: 100vh;
+}
+
+.left-side {
+    background-image: url("../img/login.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    min-height: 100vh;
+
+    color: white;
+}
+
+.left-side::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.left-content {
+    position: relative;
+    z-index: 2;
+
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 80px;
+}
+
+.brand {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(8px);
+
+    border-radius: 50px;
+
+    margin-bottom: 30px;
+
+    width: fit-content;
+
+    font-weight: 600;
+}
+
+.left-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.left-content p {
+    margin-top: 20px;
+    font-size: 20px;
+    max-width: 480px;
+}
+
+.right-side {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: white;
+
+    min-height: 100vh;
+}
+
+.register-box {
+    width: 100%;
+    max-width: 450px;
+}
+
+.register-icon {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #e8f5e9;
+
+    color: #198754;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 38px;
+
+    margin: auto;
+
+    margin-bottom: 25px;
+}
+
+.form-control {
+    height: 50px;
+    border-radius: 12px;
+}
+
+.btn-register {
+    height: 50px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.back-home {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 5px 10px;
+
+    background: rgba(255, 255, 255, 0.95);
+    color: #198754;
+    border: 1px solid rgba(13, 110, 253, 0.2);
+    border-radius: 20px;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+.back-home i {
+    font-size: 12px;
+}
+
+.back-home span {
+    font-size: 12px;
+}
+
+.back-home:hover {
+    background: #198754;
+    color: #fff;
+    transform: translateY(-2px);
+}

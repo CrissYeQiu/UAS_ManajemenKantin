@@ -37,53 +37,34 @@
 
         <tr>
             <td>{{ $key+1 }}</td>
-
             <td>{{ $m->nama_menu }}</td>
-
             <td>{{ ucfirst($m->jenis) }}</td>
-
             <td>Rp {{ number_format($m->harga,0,',','.') }}</td>
 
             <td>
-
                 @if($m->status)
-
                     <span class="badge bg-success">Tersedia</span>
-
                 @else
-
                     <span class="badge bg-danger">Habis</span>
-
                 @endif
-
             </td>
 
             <td>
-
                 <a href="{{ route('menu.edit',$m->id) }}"
                     class="btn btn-warning btn-sm">
-
                     Edit
-
                 </a>
-
                 <form action="{{ route('menu.destroy',$m->id) }}"
                     method="POST"
                     class="d-inline">
-
                     @csrf
                     @method('DELETE')
-
                     <button
                         class="btn btn-danger btn-sm"
                         onclick="return confirm('Hapus menu?')">
-
                         Hapus
-
                     </button>
-
                 </form>
-
             </td>
 
         </tr>

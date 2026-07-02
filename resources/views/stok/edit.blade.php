@@ -70,13 +70,13 @@
             <div class="form-group mb-3">
                 <label>Jenis Pengajuan</label>
                 <select name="jenis_pengajuan" class="form-control">
-                    <option value="stok_masuk" {{ $pengajuan->jenis_pengajuan == 'stok masuk' ? 'selected' : '' }}>
+                    <option value="stok masuk" {{ $pengajuan->jenis_pengajuan == 'stok masuk' ? 'selected' : '' }}>
                         Stok Masuk
                     </option>
-                    <option value="stok_habis" {{ $pengajuan->jenis_pengajuan == 'stok habis' ? 'selected' : '' }}>
+                    <option value="stok habis" {{ $pengajuan->jenis_pengajuan == 'stok habis' ? 'selected' : '' }}>
                         Stok Habis
                     </option>
-                    <option value="pembelian_bahan" {{ $pengajuan->jenis_pengajuan == 'pembelian bahan' ? 'selected' : '' }}>
+                    <option value="pembelian bahan" {{ $pengajuan->jenis_pengajuan == 'pembelian bahan' ? 'selected' : '' }}>
                         Pembelian
                     </option>
                 </select>

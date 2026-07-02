@@ -1,49 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Luminthue's</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Luminthue's</title>
+    <link rel="stylesheet" href="{{asset('assets/css/login.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        
+    </style>
+
 </head>
-<body class="bg-light">
-    <a href="/"
-        class="btn btn-outline-secondary btn-sm position-absolute m-3"
-        style="top: 0; left: 0;">
-            Kembali ke Landing Page
+<body>
+
+<div class="container-fluid">
+    <a href="/" class="back-home">
+        <i class="bi bi-arrow-left"></i>
+        <span>Kembali ke Landing Page</span>
     </a>
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-            <div class="card shadow mt-5">
-                <div class="card-header bg-primary text-white text-center">
-                    <h5 class="mb-0 py-1">Masuk Ke Sistem</h5>
+    <div class="row login-container">
+
+        <!-- LEFT -->
+
+        <div class="col-lg-6 left-side">
+
+            <div class="left-content">
+
+                <div class="brand">
+                    ✨ Luminthue's
                 </div>
-                <div class="card-body p-4">
-                    @if(session('sukses'))
-                        <div class="alert alert-success py-2 small">{{ session('sukses') }}</div>
-                    @endif
- 
-                    @error('login_error')
-                        <div class="alert alert-danger py-2 small">{{ $message }}</div>
-                    @enderror
- 
-                    <form action="{{ route('login.auth') }}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                            <label class="form-label small">Alamat Email</label>
-                            <input type="email" name="email" class="form-control" value="{{ old('email') }}" required autofocus>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label small">Kata Sandi</label>
-                            <input type="password" name="password" class="form-control" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 mb-2">Masuk Ke Sistem</button>
-                        <p class="text-center small mb-0">Belum memiliki akun? <a href="{{ route('register') }}">Daftar Sekarang</a></p>
-                    </form>
-                </div>
+
+                <h1>
+                    Selamat Datang<br>
+                    Kembali!
+                </h1>
+
+                <p>
+                    Masuk ke akun Anda untuk melanjutkan
+                    dan menikmati seluruh fitur sistem
+                    manajemen Luminthue's.
+                </p>
+
             </div>
+
         </div>
+
+        <!-- RIGHT -->
+
+        <div class="col-lg-6 right-side">
+            <div class="login-box">
+
+                <div class="login-icon">
+                    🔒
+                </div>
+
+                <h2 class="text-center fw-bold">
+                    Masuk Ke Sistem
+                </h2>
+
+                <p class="text-center text-muted mb-4">
+                    Silakan login untuk melanjutkan
+                </p>
+
+                @if(session('sukses'))
+                    <div class="alert alert-success">
+                        {{ session('sukses') }}
+                    </div>
+                @endif
+
+                @error('login_error')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+                <form action="{{ route('login.auth') }}" method="POST">
+
+                    @csrf
+
+                    <div class="mb-3">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            value="{{ old('email') }}"
+                            placeholder="Masukkan email"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label>Password</label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            class="form-control"
+                            placeholder="Masukkan password"
+                            required
+                        >
+
+                    </div>
+
+                    <button class="btn btn-primary btn-login w-100">
+                        Masuk Ke Sistem
+                    </button>
+
+                </form>
+
+                <hr class="my-4">
+
+                <p class="text-center">
+
+                    Belum memiliki akun?
+
+                    <a href="{{ route('register') }}" class="text-decoration-none fw-bold">
+                        Daftar Sekarang
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
+
 </div>
+
 </body>
 </html>
